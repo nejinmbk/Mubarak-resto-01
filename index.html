@@ -58,10 +58,30 @@
         <div class="history-layout">
           <div class="history-stamp" aria-label="Mubarak Restaurant established since 1952">
             <div class="heritage-seal">
-              <span class="seal-kicker">Since</span>
-              <strong>1952</strong>
-              <span class="seal-divider"></span>
-              <span class="seal-footer">Mubarak Restaurant</span>
+              <svg viewBox="0 0 300 300" width="100%" height="100%" aria-hidden="true">
+                <!-- Text path: radius 112, starts at 9 o'clock goes to 3 o'clock over the top -->
+                <path id="curve-text-path" d="M 38,150 A 112,112 0 0,1 262,150" fill="none" stroke="none" />
+                
+                <!-- Border line path just below the text: radius 98, top arch -->
+                <path id="curve-border-path" d="M 52,150 A 98,98 0 0,1 248,150" fill="none" class="seal-curve-border" />
+
+                <!-- Spaced Top Curved Text: MUBARAK RESTAURANT -->
+                <text class="seal-text-curved">
+                  <textPath href="#curve-text-path" startOffset="50%" text-anchor="middle" textLength="310">
+                    MUBARAK RESTAURANT
+                  </textPath>
+                </text>
+
+                <!-- SINCE (above 1952, positioned at y=100) -->
+                <text class="seal-text-since" x="150" y="100" text-anchor="middle" dominant-baseline="central">
+                  SINCE
+                </text>
+
+                <!-- 1952 (dead center, positioned at y=152, using dominant-baseline for vertical centering) -->
+                <text class="seal-text-year" x="150" y="152" text-anchor="middle" dominant-baseline="central">
+                  1952
+                </text>
+              </svg>
             </div>
           </div>
           <div class="history-copy">

@@ -286,14 +286,11 @@ h3 {
 
 .heritage-seal {
   position: relative;
-  display: grid;
+  display: block;
   width: min(290px, 100%);
   aspect-ratio: 1;
-  grid-template-rows: 1fr auto auto auto auto 1fr;
-  place-items: center;
   border: 1px solid rgba(35, 104, 77, 0.34);
   border-radius: 50%;
-  padding: 34px 28px;
   background:
     radial-gradient(circle at 50% 42%, rgba(255, 250, 242, 0.98) 0 50%, rgba(246, 239, 227, 0.96) 100%),
     linear-gradient(135deg, rgba(35, 104, 77, 0.08), rgba(212, 154, 54, 0.16));
@@ -311,50 +308,37 @@ h3 {
   content: "";
 }
 
-.heritage-seal strong {
-  position: relative;
-  z-index: 1;
+.heritage-seal svg {
   display: block;
-  margin: 8px 0 2px;
-  color: var(--spice);
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(82px, 8vw, 116px);
-  font-weight: 800;
-  line-height: 0.78;
-  text-shadow: 0 2px 0 rgba(255, 250, 242, 0.95);
+  width: 100%;
+  height: 100%;
 }
 
-.seal-kicker,
-.seal-footer {
-  position: relative;
-  z-index: 1;
-  display: block;
-  font-weight: 900;
-  letter-spacing: 0.2em;
-  line-height: 1;
-  text-transform: uppercase;
+.seal-curve-border {
+  stroke: rgba(35, 104, 77, 0.25);
+  stroke-width: 1.5;
 }
 
-.seal-kicker {
-  grid-row: 2;
-  color: var(--leaf);
-  font-size: 13px;
-}
-
-.seal-divider {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 72px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.seal-footer {
-  margin-top: 10px;
-  color: var(--ink);
+.seal-text-curved {
   font-size: 11px;
-  text-align: center;
+  font-weight: 900;
+  fill: var(--ink);
+  font-family: 'Inter', sans-serif;
+}
+
+.seal-text-since {
+  font-size: 13px;
+  font-weight: 900;
+  fill: var(--leaf);
+  letter-spacing: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+.seal-text-year {
+  font-size: 82px;
+  font-weight: 800;
+  fill: var(--spice);
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 .history-copy {
