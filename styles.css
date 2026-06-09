@@ -66,6 +66,7 @@ a {
   font-weight: 800;
   letter-spacing: 0;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -82,9 +83,9 @@ a {
 
 .brand-logo {
   display: block;
-  width: 42px;
   height: 42px;
-  object-fit: contain;
+  width: auto;
+  flex-shrink: 0;
 }
 
 .main-nav {
