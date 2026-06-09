@@ -80,6 +80,13 @@ a {
   font-size: 22px;
 }
 
+.brand-logo {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
 .main-nav {
   gap: clamp(14px, 3vw, 32px);
   font-size: 14px;
