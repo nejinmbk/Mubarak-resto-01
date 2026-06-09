@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Seal Design with Center-Aligned 1952</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #201915;
+      --muted: #6d625a;
+      --paper: #fffaf2;
+      --cream: #f6efe3;
+      --leaf: #23684d;
+      --spice: #b63f25;
+      --gold: #d49a36;
+      --charcoal: #17130f;
+    }
+
+    body {
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .seal-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .seal-container {
+      width: 290px;
+      height: 290px;
+      background: radial-gradient(circle at 50% 42%, rgba(255, 250, 242, 0.98) 0 50%, rgba(246, 239, 227, 0.96) 100%);
+      border-radius: 50%;
+      box-shadow: 0 22px 46px rgba(32, 25, 21, 0.1);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="seal-box">
+    <h2>Prototype A: Centered '1952' (using dominant-baseline)</h2>
+    <div class="seal-container">
+      <svg viewBox="0 0 300 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <!-- Inner background circles matching CSS style -->
+        <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(35, 104, 77, 0.34)" stroke-width="1.5" />
+        <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(212, 154, 54, 0.25)" stroke-width="4" />
+        <circle cx="150" cy="150" r="126" fill="none" stroke="rgba(35, 104, 77, 0.15)" stroke-width="1" />
+
+        <!-- Text path: radius 112, starts at 9 o'clock goes to 3 o'clock over the top -->
+        <path id="curve-text-path" d="M 38,150 A 112,112 0 0,1 262,150" fill="none" stroke="none" />
+
+        <!-- Border line path just below the text: radius 98, top arch -->
+        <path id="curve-border-path" d="M 52,150 A 98,98 0 0,1 248,150" fill="none" stroke="rgba(35, 104, 77, 0.25)"
+          stroke-width="1.5" />
+
+        <!-- Spaced Top Curved Text: MUBARAK RESTAURANT -->
+        <text font-size="11" font-weight="900" fill="var(--ink)" font-family="'Inter', sans-serif">
+          <textPath href="#curve-text-path" startOffset="50%" text-anchor="middle" textLength="310">
+            MUBARAK RESTAURANT
+          </textPath>
+        </text>
+
+        <!-- SINCE (above 1952, positioned at y=100) -->
+        <text x="150" y="100" font-size="13" font-weight="900" fill="var(--leaf)" letter-spacing="3px"
+          font-family="'Inter', sans-serif" text-anchor="middle" dominant-baseline="central">
+          SINCE
+        </text>
+
+        <!-- 1952 (dead center, positioned at y=150, using dominant-baseline for vertical centering) -->
+        <text x="150" y="152" font-size="82" font-weight="800" fill="var(--spice)"
+          font-family="'Playfair Display', Georgia, serif" text-anchor="middle" dominant-baseline="central">
+          1952
+        </text>
+      </svg>
+    </div>
+  </div>
+
+</body>
+
+</html>
